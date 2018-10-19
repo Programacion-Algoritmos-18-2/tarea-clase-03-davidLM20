@@ -13,11 +13,13 @@ import java.util.Scanner;
  */
 public class Trabajador {
 
+    // se crea variables privadas para los metodos 
     private String nombres;
     private double sueldo_mensual;
     private String apellidos;
     Scanner entrada = new Scanner(System.in);
 
+    //me todos para agregar nombres, apellido y sueldo
     public void agregar_nombres(String n) {
         nombres = n;
     }
@@ -30,10 +32,12 @@ public class Trabajador {
         sueldo_mensual = sueldo;
     }
 
+    // este metodo es una sobre carga de agragar_sueldo
     public void agrear_sueldo(double x, double y, double z, double a) {
         sueldo_mensual = x + y + z + a;
     }
 
+    // este metodo es una sobre carga de agragar_sueldo
     public void agregar_sueldo(double[] sueldos) {
         double acm = 0;
         for (int i = 0; i < 4; i++) {
@@ -44,6 +48,7 @@ public class Trabajador {
         sueldo_mensual = acm;
     }
 
+    //metodos para agregar los datos 
     public void agregar_apellidos(String n) {
         apellidos = n;
     }
@@ -59,7 +64,7 @@ public class Trabajador {
     public double obtener_sueldo_mensual() {
         return sueldo_mensual;
     }
-
+    // metodo para presentar los datos
     public String presentar_datos() {
         return String.format("\n\tNombres: %s \n\tApellidos: %s\n\t"
                 + "Sueldo: %.2f", obtener_nombres(), obtener_apellidos(),
